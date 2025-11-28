@@ -1,4 +1,4 @@
-package com.example.a11_alanbauza.ui;
+package com.example.a11_alanbauza.DB;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -33,7 +33,7 @@ public class GestorBD {
 
     // EDITAR película
     public void editarPelicula(int id, String titulo, String director, int anio,
-                              String genero, float calificacion, String resena, String fechaVista) {
+                               String genero, float calificacion, String resena, String fechaVista) {
         SQLiteDatabase db = adminBD.getWritableDatabase();
         ContentValues valores = new ContentValues();
         valores.put("titulo", titulo);
@@ -83,19 +83,19 @@ public class GestorBD {
     public Pelicula obtenerPelicula(int id) {
         SQLiteDatabase db = adminBD.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM peliculas WHERE id=?",
-                                   new String[]{String.valueOf(id)});
+                new String[]{String.valueOf(id)});
 
         Pelicula pelicula = null;
         if (cursor.moveToFirst()) {
             pelicula = new Pelicula(
-                cursor.getInt(0),       // id
-                cursor.getString(1),    // titulo
-                cursor.getString(2),    // director
-                cursor.getInt(3),       // anio
-                cursor.getString(4),    // genero
-                cursor.getFloat(5),     // calificacion
-                cursor.getString(6),    // resena
-                cursor.getString(7)     // fecha_vista
+                    cursor.getInt(0),       // id
+                    cursor.getString(1),    // titulo
+                    cursor.getString(2),    // director
+                    cursor.getInt(3),       // anio
+                    cursor.getString(4),    // genero
+                    cursor.getFloat(5),     // calificacion
+                    cursor.getString(6),    // resena
+                    cursor.getString(7)     // fecha_vista
             );
         }
         cursor.close();
@@ -115,7 +115,7 @@ public class GestorBD {
         public String fechaVista;
 
         public Pelicula(int id, String titulo, String director, int anio,
-                       String genero, float calificacion, String resena, String fechaVista) {
+                        String genero, float calificacion, String resena, String fechaVista) {
             this.id = id;
             this.titulo = titulo;
             this.director = director;

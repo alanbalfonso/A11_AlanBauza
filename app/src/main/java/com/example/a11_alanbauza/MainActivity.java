@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
-import com.example.a11_alanbauza.ui.GestorBD;
+import com.example.a11_alanbauza.DB.GestorBD;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -114,11 +114,11 @@ public class MainActivity extends AppCompatActivity {
 
         String director = etDirector.getText().toString().trim();
         int anio = etAnio.getText().toString().isEmpty() ? 0 :
-                   Integer.parseInt(etAnio.getText().toString());
+                Integer.parseInt(etAnio.getText().toString());
         String genero = etGenero.getText().toString().trim();
         String resena = etResena.getText().toString().trim();
         String fechaVista = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-                            .format(new Date());
+                .format(new Date());
 
         gestor.insertarPelicula(titulo, director, anio, genero, calificacion, resena, fechaVista);
         reiniciarFormulario();
@@ -152,15 +152,15 @@ public class MainActivity extends AppCompatActivity {
 
         String director = etDirector.getText().toString().trim();
         int anio = etAnio.getText().toString().isEmpty() ? 0 :
-                   Integer.parseInt(etAnio.getText().toString());
+                Integer.parseInt(etAnio.getText().toString());
         String genero = etGenero.getText().toString().trim();
         float calificacion = rbCalificacion.getRating();
         String resena = etResena.getText().toString().trim();
         String fechaVista = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-                            .format(new Date());
+                .format(new Date());
 
         gestor.editarPelicula(idSeleccionado, titulo, director, anio, genero,
-                             calificacion, resena, fechaVista);
+                calificacion, resena, fechaVista);
         reiniciarFormulario();
         Toast.makeText(this, "Película editada", Toast.LENGTH_SHORT).show();
     }

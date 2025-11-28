@@ -1,5 +1,4 @@
-package com.example.a11_alanbauza.ui;
-
+package com.example.a11_alanbauza.DB;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;

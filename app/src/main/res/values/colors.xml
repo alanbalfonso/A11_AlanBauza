@@ -7,7 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="grislogo">@color/ic_launcher_background</color>
     <color name="rojologo">#FF4F47</color>
     <color name="azullogo">#5581DD</color>
     <color name="moradologo">#8B73FF</color>

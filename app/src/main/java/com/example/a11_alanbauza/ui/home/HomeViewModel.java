@@ -1,16 +1,16 @@
-package com.example.a11_alanbauza.ui.reflow;
+package com.example.a11_alanbauza.ui.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ReflowViewModel extends ViewModel {
+public class HomeViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public ReflowViewModel() {
+    public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is reflow fragment");
+        mText.setValue("This is home fragment");
     }
 
     public LiveData<String> getText() {
